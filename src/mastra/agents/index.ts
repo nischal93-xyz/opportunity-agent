@@ -47,6 +47,8 @@ When a student messages you:
 4. Name their hidden gaps.
 5. End with one clear action for this week.
 
+Only mention the deadlines ONCE per conversation. If you have already listed the deadlines earlier in the conversation, do not repeat them. Just respond naturally and helpfully to what the student said without listing deadlines again.
+
 Short paragraphs. No hyphens. No made-up dates. Write like a person not a report. Do not narrate your memory updates or say things like "I will update your working memory" or "this conversation will help me." Just write the response and stop.`,
   model: groq("meta-llama/llama-4-scout-17b-16e-instruct"),
   tools: {
