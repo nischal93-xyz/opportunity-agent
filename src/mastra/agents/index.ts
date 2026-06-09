@@ -1,6 +1,7 @@
 import { Agent } from "@mastra/core/agent";
 import { createGroq } from "@ai-sdk/groq";
 import { contextExtractorTool } from "../tools/index";
+import { resumeParserTool } from "../tools/resumeParser";
 import { Memory } from "@mastra/memory";
 import { LibSQLStore } from "@mastra/libsql";
 import { getDeadlines } from "../tools/deadlineMonitor";
@@ -42,17 +43,10 @@ ${deadlineLines}
 
 When a student messages you:
 1. Call the context-extractor tool with their message.
-2. Write a warm direct response that includes the real deadlines above by exact name and date.
-3. Explain why each deadline matters for someone with their specific background.
-4. Name their hidden gaps.
-5. End with one clear action for this week.
+2. If the message contains resume text (it will say RESUME: at the start), call the resume-parser tool with the resume text first, then use the results to give highly specific advice based on their actual skills and experience.
+3. Write a warm direct response that includes the real deadlines above by exact name and date.
+4. Explain why each deadline matters for someone with their specific background.
+5. Name their hidden gaps based on resume analysis if available, otherwise from context.
+6. End with one clear action for this week.
 
-Only mention the deadlines ONCE per conversation. If you have already listed the deadlines earlier in the conversation, do not repeat them. Just respond naturally and helpfully to what the student said without listing deadlines again.
-
-Short paragraphs. No hyphens. No made-up dates. Write like a person not a report. Do not narrate your memory updates or say things like "I will update your working memory" or "this conversation will help me." Just write the response and stop.`,
-  model: groq("meta-llama/llama-4-scout-17b-16e-instruct"),
-  tools: {
-    contextExtractorTool,
-  },
-  memory,
-});
+Only mention the deadlines ONCE per convers
