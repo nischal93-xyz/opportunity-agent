@@ -1,0 +1,12 @@
+[33m0fe6a67[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m clean up resume response formatting
+[33m71b17c4[m trigger redeploy
+[33m746c22e[m fix unterminated string in agents index
+[33md255ebc[m add resume parser tool
+[33m05472e7[m fix deadline repetition in responses
+[33m0d015d6[m fix agents index.ts content
+[33m591948e[m revert to working index.ts
+[33m476567d[m add CORS config for Vercel
+[33m1585d58[m fix Procfile location to root
+[33m4e2543c[m add Procfile for Railway deployment
+[33m92901e0[m initial commit - OpportunityAgent backend
+[33m27623a8[m "Initial commit from Mastra"
